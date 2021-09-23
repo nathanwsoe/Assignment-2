@@ -68,7 +68,7 @@
       "type": "quantitative",
       "scale": { 
         "type": "threshold", 
-        "domain": [1837.5, 4984.44, 8602.86, 13298.35]
+        "domain": [1840, 5000, 8600, 13300]
         }
     },
     "tooltip": [
