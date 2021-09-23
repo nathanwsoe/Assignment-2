@@ -68,7 +68,7 @@
       "type": "quantitative",
       "scale": { 
         "type": "threshold", 
-        "domain": [1000, 5000, 10000]
+        "domain": [1837.5, 4984.44, 8602.86, 13298.35]
         }
     },
     "tooltip": [
@@ -89,7 +89,7 @@
           "value": 1
         }
       ],
-      "value": 0.2
+      "value": 0.4
     },
     "strokeOpacity": {
     "condition": [
@@ -101,10 +101,24 @@
         {
           "param": "highlight",
           "empty": false,
-          "value": 0.6
+          "value": 1
         }
       ],
       "value": 0.5
+    },
+    "fillOpacity"
+    : {
+    "condition": [
+        {
+          "param": "select",
+          "value": 1
+        },
+        {
+          "param": "highlight",
+          "value": 1
+        }
+      ],
+      "value": 0.4
     }
   }
 }
