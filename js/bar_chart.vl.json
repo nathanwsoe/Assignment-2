@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "COVID-19 Cumulative Cases",
+  "title": "Amount of Fully Vaccinated People in each Country",
   "data": {
     "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/vaccination-data.csv"
     },
@@ -14,7 +14,7 @@
   ],
     "mark": {
       "type": "bar",
-      "stroke": "black",
+      "stroke": "#fd8d3c",
       "cursor": "pointer"
     },
     "transform": [{
