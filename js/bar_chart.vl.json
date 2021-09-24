@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "COVID-19 Cumulative Cases",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/vaccination-data.csv"
+  },
+  "hconcat": [
+    {
+      "params": [
+        {"name": "highlight", "select": {"type": "point", "on": "mouseover"}},
+        {"name": "select", "select": "point"}
+      ],
+      "mark": {"type": "bar", "stroke": "black", "cursor": "pointer"},
+      "transform": [{"filter": {"param": "brush"}}],
+      "encoding": {
+        "y": {
+          "field": "COUNTRY",
+          "type": "nominal",
+          "axis": {"minExtent": 100, "title": null},
+          "sort": "-x"
+        },
+        "x": {
+          "field": "PERSONS_FULLY_VACCINATED_PER100",
+          "aggregate": "max",
+          "scale": {"domain": [0, 100]},
+          "axis": {"orient": "top", "title": "Fully Vaccinated People per 100"}
+        },
+        "tooltip": [
+          {"field": "COUNTRY", "type": "nominal", "title": "Country"},
+          {
+            "field": "PERSONS_FULLY_VACCINATED_PER100",
+            "type": "quantitative",
+            "title": "Number of fully vaccinated people per 100"
+          },
+          {
+            "field": "PERSONS_FULLY_VACCINATED",
+            "type": "quantitative",
+            "title": "Number of fully vaccinated people"
+          }
+        ],
+        "strokeWidth": {
+          "condition": [
+            {"param": "select", "empty": false, "value": 1},
+            {"param": "highlight", "empty": false, "value": 1}
+          ],
+          "value": 0
+        },
+        "strokeOpacity": {
+          "condition": [
+            {"param": "select", "empty": false, "value": 1},
+            {"param": "highlight", "empty": false, "value": 1}
+          ],
+          "value": 0
+        },
+        "fillOpacity": {
+          "condition": [
+            {"param": "select", "value": 1},
+            {"param": "highlight", "value": 1}
+          ],
+          "value": 0.4
+        }
+      }
+    },
+    {
+      "height": 200,
+      "width": 50,
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "COUNTRY",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": null
+        },
+        "x": {
+          "field": "PERSONS_FULLY_VACCINATED_PER100",
+          "aggregate": "max",
+          "axis": null
+        }
+      }
+    }
+  ],
+  "config": {}
+}
