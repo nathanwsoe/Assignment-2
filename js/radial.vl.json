@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 300,
+  "title": "A simple radial chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/total_vaccinations_by_manufacturer_cleaned.csv"
+  },
+  "layer": [
+    {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
+    {
+      "mark": {"type": "text", "radiusOffset": 50},
+      "encoding": {"text": {"field": "vaccine", "type": "nominal"}}
+    }
+  ],
+  "encoding": {
+    "theta": {
+      "field": "total_vaccinations",
+      "type": "quantitative",
+      "stack": true
+    },
+    "radius": {
+      "field": "total_vaccinations",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
+    },
+    "color": {"field": "pencentage", "type": "nominal", "legend": null}
+  },
+  "config": {}
+}
