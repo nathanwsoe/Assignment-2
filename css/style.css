@@ -34,5 +34,5 @@ body{
 }
     
 #choropleth_map{
-    width: 100vw !important;
+    width: 100vw;
 }
