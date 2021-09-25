@@ -1,38 +1,38 @@
-p,h1,h2{
-    font-family: 'Source Sans Pro', sans-serif;
+h1 {
+font-weight: 900;
 }
-h1{
-    font-weight: 900;
+body {
+background-color: #ADD8E6 !important;
 }
-body{
-     background-color: #ADD8E6 !important;
+.page {
+    width: 850px;    
+    background-color: #ADD8E6 !important;   
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
 }
-.page{
-     width: 850px;    
-     background-color: #ADD8E6 !important;   
-     margin: auto;
-     padding: 50px;
-     padding-top: 35px;
-}
-.vis-container{
+.vis-container {
     width: 100%;
 }
-.description h2, h1{
+.description h2, h1 {
     margin-top:0px;
 }
 .description-right {
     padding-left: 20px;
 }
-.description-left{
+.description-left {
     padding-right: 20px;
 }
-.pure-g{
+.pure-g {
     margin-bottom: 25px;
 }
-.small-font{
+.small-font {
     font-size: 14px;
 }
     
-#choropleth_map{
+#choropleth_map {
     width: 100vw;
+}
+p,h1,h2 {
+font-family: 'Source Sans Pro', sans-serif;
 }
