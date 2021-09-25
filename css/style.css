@@ -1,4 +1,4 @@
-p,h1,h2{
+  p,h1,h2{
     font-family: 'Source Sans Pro', sans-serif;
   }
   h1{
@@ -31,4 +31,8 @@ p,h1,h2{
   }
   .small-font{
     font-size: 14px;
+  }
+    
+  #choropleth_map{
+    width: 100vw;
   }
