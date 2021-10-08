@@ -1,15 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 300,
-  "title": "Total Vaccinations by Manufacturer",
+  "width": "container",
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/total_vaccinations_by_manufacturer_cleaned.csv"
   },
   "layer": [
-    {"mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}},
+    {"mark": {"type": "arc", "innerRadius": 30, "stroke": "white"}},
     {
-      "mark": {"type": "text", "radiusOffset": 50},
+      "mark": {"type": "text", "radiusOffset": 40},
       "encoding": {"text": {"field": "vaccine", "type": "nominal"}}
     }
   ],
@@ -27,12 +26,28 @@
       "field": "percentage", 
       "type": "nominal", 
       "legend": null,
-      "scale": {"range": ["#b2df8a", "#33a02c", "#a6cee3", "#1f78b4"]}
+      "scale": {
+        "range": [
+          "#377eb8",
+          "#ff7f00",
+          "#984ea3",
+          "#e41a1c"
+          
+        ]
+      }
     },
     "tooltip": [
       {"field": "vaccine", "type": "nominal", "title": "Vaccine"},
       {"field": "total_vaccinations", "type": "quantitative", "title": "Total vaccinations", "format": ","},
       {"field": "percentage", "type": "quantitative", "title": "Percentage of total vaccinations of all vaccines", "format":"0.2%"}
     ]
+  },
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "background": "#a0c5e0"
   }
 }
