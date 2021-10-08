@@ -71,7 +71,9 @@ body {
     background: url("../media/webpage_banner.jpg") #20445f;
     background-position: center;
     color: white;
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .audio_frame {
     background-color: #749bb8;
@@ -104,15 +106,53 @@ body {
     font-size: 14px;
     font-family: sans-serif;
 }
+
 select {
-    background-color: white;
+    --radius: 2px;
+    --baseFg: #d7d7d7;
+    --baseBg: #4d5061;
+    --accentFg: #7a7c88;
+    --accentBg: #3b3c47;
+    font: 14px sans-serif;
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--baseFg);
+    border: 0;
+    line-height: 1;
+    outline: 0;
+    margin-bottom: 2.5px;
+    margin-top: 2.5px;
+    padding: 0.65em 2.5em 0.55em 0.75em;
+    border-radius: var(--radius);
+    background-color: var(--baseBg);
+    background-image: linear-gradient(var(--accentBg), var(--accentBg)),
+      linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+      linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+      linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+    background-position: right 20px center, right bottom, right bottom, right bottom;   
 }
+  
+select:hover {
+    background-image: linear-gradient(var(--accentFg), var(--accentFg)),
+      linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
+      linear-gradient(-225deg, transparent 50%, var(--accentFg) 50%),
+      linear-gradient(var(--accentFg) 42%, var(--accentBg) 42%);
+}
+
+input[type="range"] {
+    margin: 7px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
 a:link {
-    color: #f78888;
+    color: #f68cb0;
     background-color: transparent;
 }
 a:visited {
-    color: #f78888;
+    color: #f68cb0;
     background-color: transparent;
 }
 a:hover {
@@ -120,6 +160,6 @@ a:hover {
     background-color: transparent;
 }
 a:active {
-    color: #f78888;
+    color: #f68cb0;
     background-color: transparent;
 }
