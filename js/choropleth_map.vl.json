@@ -88,7 +88,7 @@
       "scale": {
         "type": "quantile"
       },
-      "title": "Total Cases (per 100,000 population)"
+      "title": "Attribute (per 100,000 population)"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
