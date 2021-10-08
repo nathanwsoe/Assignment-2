@@ -1,0 +1,237 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/owid-covid-data_cleaned.csv"
+  },
+  "params": [
+    {
+      "name": "location_selection",
+      "value": "World",
+      "bind": {
+        "input": "select",
+        "options": ["Afghanistan", "Africa", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Asia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bonaire Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Europe", "European Union", "Faeroe Islands", "Falkland Islands", "Fiji", "Finland", "France", "French Polynesia", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "International", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia (country)", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "North America", "North Macedonia", "Northern Cyprus", "Norway", "Oceania", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South America", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican", "Venezuela", "Vietnam", "Wallis and Futuna", "World", "Yemen", "Zambia", "Zimbabwe"],
+        "labels":["Afghanistan", "Africa", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Asia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bonaire Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czechia", "Democratic Republic of Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Europe", "European Union", "Faeroe Islands", "Falkland Islands", "Fiji", "Finland", "France", "French Polynesia", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "International", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia (country)", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "North America", "North Macedonia", "Northern Cyprus", "Norway", "Oceania", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South America", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican", "Venezuela", "Vietnam", "Wallis and Futuna", "World", "Yemen", "Zambia", "Zimbabwe"],
+        "name": "Data of: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+    "width": 650,
+    "height": 200,
+    "layer": [
+    {
+      "transform": [
+      {"filter": "datum.location == location_selection"},
+      {
+        "calculate": "datum.total_cases_per_million / 10",
+        "as": "Total Cases (per 100,000 population)"
+      },
+      {
+        "calculate": "datum.new_cases_per_million / 10",
+        "as": "Daily Cases (per 100,000 population)"
+      }
+    ],
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "title": null},
+        "y": {"field": "Total Cases (per 100,000 population)", "type": "quantitative", "title": "Total Cases (per 100,000)", "axis": {"minExtent": 55}},
+        "color": {
+          "legend": null,
+          "scale": {
+              "range": ["blue"]
+            }
+          }
+      },
+      "layer": [
+        {"mark": "line"},
+        {
+          "params": [{
+            "name": "label",
+            "select": {
+              "type": "point",
+              "encodings": ["x"],
+              "nearest": true,
+              "on": "mouseover"
+            }
+          }],
+          "mark": "point",
+          "encoding": {
+            "opacity": {
+              "condition": {
+                "param": "label",
+                "empty": false,
+                "value": 1
+              },
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "total_cases", "type": "quantitative", "format": ",.2f", "title": "Total Cases"},
+              {"field": "Total Cases (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+              {"field": "new_cases", "type": "quantitative", "format": ",.2f", "title": "Daily Cases"},
+              {"field": "Daily Cases (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+              {"field": "date", "type": "temporal", "title": "Date"}
+          ]
+          }
+        }
+      ]
+    },
+    {
+      "transform": [{"filter": {"param": "label", "empty": false}}],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "gray"},
+          "encoding": {
+            "x": {"type": "temporal", "field": "date"}
+          }
+        }
+      ]
+    }
+  ]
+  },
+  {
+  "width": 650,
+  "height": 200,
+  "layer": [
+    {
+      "transform": [
+      {"filter": "datum.location == location_selection"},
+      {
+        "calculate": "datum.total_deaths_per_million / 10",
+        "as": "Total Deaths (per 100,000 population)"
+      },
+      {
+        "calculate": "datum.new_deaths_per_million / 10",
+        "as": "Daily Deaths (per 100,000 population)"
+      }
+    ],
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "title": null},
+        "y": {"field": "Total Deaths (per 100,000 population)", "type": "quantitative", "title": "Total Deaths (per 100,000)", "axis": {"minExtent": 55}},
+        "color": {
+          "field": "location", 
+          "type": "nominal", 
+          "legend": null,
+          "scale": {
+            "range": ["#e41a1c"]
+          }
+        }
+      },
+      "layer": [
+        {"mark": "line"},
+        {
+          "params": [{
+            "name": "label",
+            "select": {
+              "type": "point",
+              "encodings": ["x"],
+              "nearest": true,
+              "on": "mouseover"
+            }
+          }],
+          "mark": "point",
+          "encoding": {
+            "opacity": {
+              "condition": {
+                "param": "label",
+                "empty": false,
+                "value": 1
+              },
+              "value": 0
+            },
+            "tooltip": [
+            {"field": "total_deaths", "type": "quantitative", "format": ",.2f", "title": "Total Deaths"},
+            {"field": "Total Deaths (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+            {"field": "new_deaths", "type": "quantitative", "format": ",.2f", "title": "Daily Deaths"},
+            {"field": "Daily Deaths (per 100,000 population)", "type": "quantitative"},
+            {"field": "date", "type": "temporal", "title": "Date"}
+          ]
+          }
+        }
+      ]
+    },
+    {
+      "transform": [{"filter": {"param": "label", "empty": false}}],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "gray"},
+          "encoding": {
+            "x": {"type": "temporal", "field": "date"}
+          }
+        }
+      ]
+    }
+  ]
+  },
+  {
+    "width": 650,
+    "height": 200,
+    "layer": [
+    {
+      "transform": [
+      {"filter": "datum.location == location_selection"},
+      {
+        "calculate": "datum.total_vaccinations_per_hundred * 1000",
+        "as": "Total Vaccinations (per 100,000 population)"
+      },
+      {
+        "calculate": "datum.new_vaccinations/datum.population * 100000",
+        "as": "Daily Vaccinations (per 100,000 population)"
+      }
+    ],
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "title": null},
+        "y": {"field": "Total Vaccinations (per 100,000 population)", "type": "quantitative", "title": "Total Vaccinations (per 100,000)", "axis": {"minExtent": 55}},
+        "color": {
+          "legend": null
+        }
+      },
+      "layer": [
+        {"mark": "line"},
+        {
+          "params": [{
+            "name": "label",
+            "select": {
+              "type": "point",
+              "encodings": ["x"],
+              "nearest": true,
+              "on": "mouseover"
+            }
+          }],
+          "mark": "point",
+          "encoding": {
+            "opacity": {
+              "condition": {
+                "param": "label",
+                "empty": false,
+                "value": 1
+              },
+              "value": 0
+            },
+            "tooltip": [
+            {"field": "total_vaccinations", "type": "quantitative", "format": ",.2f", "title": "Total Vaccinations"},
+            {"field": "Total Vaccinations (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+            {"field": "new_vaccinations", "type": "quantitative", "format": ",.2f", "title": "Daily Vaccinations"},
+            {"field": "Daily Vaccinations (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+            {"field": "date", "type": "temporal", "title": "Date"}
+          ]
+          }
+        }
+      ]
+    },
+    {
+      "transform": [{"filter": {"param": "label", "empty": false}}],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "gray"},
+          "encoding": {
+            "x": {"type": "temporal", "field": "date"}
+          }
+        }
+      ]
+    }
+  ]
+  }],
+    "config": {
+      "background": "#ddeefa"
+    }
+}
