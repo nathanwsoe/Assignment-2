@@ -29,10 +29,6 @@
         ],
         "name": "Projection: "
       }
-    },
-    {
-      "name": "highlight",
-      "select": {"type": "point", "on": "mouseover"}
     }
   ],
   "data": {
@@ -46,17 +42,14 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/cases_and_deaths_cleaned.csv"
+          "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/cases_and_deaths_updated.csv"
         },
         "key": "location",
         "fields": [
           "continent", "total_cases",
-          "total_cases_per_million", "total_deaths", "total_deaths_per_million", "population"
+          "total_cases_per_million", "total_deaths", "total_deaths_per_million", "population", "longitude", "latitude"
           ]
       }
-    },
-    {
-      "filter": "datum.continent != null"
     },
     {
       "calculate": "datum.total_cases_per_million / 10",
@@ -69,47 +62,113 @@
     {"calculate": "datum[attribute_selection]", "as": "new_attribute"}
   ],
   "projection": {"type": {"expr": "projection_selection"}},
-  "mark": 
-  {
-    "type": "geoshape",
-    "stroke": "black"
-  },
-  "encoding": {
-    "color": {
-      "field": "new_attribute",
-      "type": "quantitative",
-      "scale": {
-        "type": "quantile"
-      },
-      "title": "Attribute (per 100,000 population)"
-    },
-    "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "continent", "type": "nominal", "title": "Continent"},
-      {"field": "total_cases", "type": "quantitative", "title": "Total Cases", "format": ",.2f"},
-      {"field": "Total Cases (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
-      {"field": "total_deaths", "type": "quantitative", "title": "Total Deaths", "format": ",.2f"},
-      {"field": "Total Deaths (per 100,000 population)", "type": "quantitative", "format": ",.2f"}
-    ],
-    "strokeWidth": {
-      "field": "new_attribute",
-      "type": "quantitative",
-      "scale": {
-        "type": "quantile",
-        "range": [1, 1, 1, 1]
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "highlight",
+          "select": {"type": "point", "on": "mouseover"}
+        },
+        {"name": "select", "select": "point"}
+      ],
+      "mark": 
+        {
+        "type": "geoshape",
+        "stroke": "black"
+        },
+      "encoding": {
+        "color": {
+          "condition": [
+            {
+              "test": "datum.continent == null",
+              "value": "pink"
+            }
+          ],
+          "field": "new_attribute",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantile"
+          },
+          "title": "Attribute (per 100,000 population)"
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "continent", "type": "nominal", "title": "Continent"},
+          {"field": "total_cases", "type": "quantitative", "title": "Total Cases", "format": ",.2f"},
+          {"field": "Total Cases (per 100,000 population)", "type": "quantitative", "format": ",.2f"},
+          {"field": "total_deaths", "type": "quantitative", "title": "Total Deaths", "format": ",.2f"},
+          {"field": "Total Deaths (per 100,000 population)", "type": "quantitative", "format": ",.2f"}
+        ],
+        "strokeWidth": {
+          "field": "new_attribute",
+          "type": "quantitative",
+          "scale": {
+            "type": "quantile",
+            "range": [1, 1, 1, 1]
+          }
+        },
+        "strokeOpacity": {
+        "condition": [
+            {
+              "param": "highlight",
+              "empty": false,
+              "value": 1
+            }
+          ],
+          "value": 0.3
+        },
+        "fillOpacity": {
+          "condition": [
+            {
+              "param": "select",
+              "value": 1
+            }
+          ],
+          "value": 0.3
+        }
       }
     },
-    "strokeOpacity": {
-    "condition": [
-        {
-          "param": "highlight",
-          "empty": false,
-          "value": 1
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "dy": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "properties.NAME", "type": "nominal"},
+        "color": {"value": "#FC6600"},
+        "opacity": {
+          "condition": {
+              "test": "datum.properties.NAME == 'Brazil' || datum.properties.NAME == 'Mongolia' || datum.properties.NAME == 'Spain' ||  datum.properties.NAME == 'Dem. Rep. Congo' ||  datum.properties.NAME == 'Malaysia' ||  datum.properties.NAME == 'United States of America' ||  datum.properties.NAME == 'Argentina' ||  datum.properties.NAME == 'Turkey'",
+              "value": 1
+          },
+          "value": 0
         }
-      ],
-      "value": 0.3
+      }
+    },
+    {
+      "mark": {"type": "circle"},
+      "encoding": { 
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": { 
+          "value": "#FC6600"
+        },
+        "opacity": {
+          "condition": {
+              "test": "datum.properties.NAME == 'Brazil' || datum.properties.NAME == 'Mongolia' || datum.properties.NAME == 'Spain' ||  datum.properties.NAME == 'Dem. Rep. Congo' ||  datum.properties.NAME == 'Malaysia' ||  datum.properties.NAME == 'United States of America' ||  datum.properties.NAME == 'Argentina' ||  datum.properties.NAME == 'Turkey'",
+              "value": 1
+          },
+          "value": 0
+        }
+      }
     }
-  },
+  ],
   "config": {
       "style": {
         "cell": {
