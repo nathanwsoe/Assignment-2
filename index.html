@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>COVID-19, Visualized</title>
+    <title>COVID-19, Visualized (2020-2021)</title>
 
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -25,10 +25,7 @@
         <!-- pure grid group -->
         <div class="pure-g" id="banner">
         <div class="pure-u-1-1">
-            <h1>COVID-19, Visualized</h1>
-            <p>Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.
-               Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without 
-               special treatment. However, some will become seriously ill and require medical attention.</p>
+            <h1>COVID-19, Visualized (2020-2021)</h1>
         </div>
         </div>
         <!-- end pure grid group -->
@@ -39,7 +36,7 @@
             <div class="audio_frame">
             <div id="audio">
                 <img src="media/play_button.png", id="button">
-                <p><span style="color: #f3d24f">Click the button</span> to listen to the audio narration</p>
+                <p><span style="color: #FC6600">Click the button</span> to listen to the audio narration</p>
             </div>
             </div>
             <div id="choro_frame">
@@ -47,6 +44,9 @@
                 <h2>COVID-19 Cumulative Cases and Deaths Around the World</h2>
                 <p>The coronavirus has already spread to almost every country in the world. It has led to a substantial loss of human life worldwide, and presents an unprecedented challenge to public health, food supply and the world of work.</p>
                 <p>Using the visualization below we can see which countries are impacted the most by the virus. The map gives an overview on the matter and can be seen based on the number of cumulative cases as well as the number of cumulative deaths in each country.  Each country is coloured based on the different classes of severity.</p>
+                <div id="small_text">
+                <p>* <strong><span style="color: #f9c0cb">Pink</span></strong> countries represent countries with no data</p>
+                </div>
             </div>
             <div id="choropleth_map"></div>
                 <p>This page demonstrates how you can use pure.css grid for your layout.</p>
@@ -81,7 +81,7 @@
         <!-- pure grid group -->
         <div class="pure-g">
             <div class="pure-u-1-1" id="end_credit">
-            <p>This visualisation is created by <a href="https://github.com/nathanwsoe" target="_blank">Nathan William Soegiarto</a></href>.<br>Data sources: <a href="https://github.com/owid/covid-19-data/tree/master/public/data/" target="_blank">Our World in Data</a></href>, and <a href="https://www.kaggle.com/gpreda/covid-world-vaccination-progress?select=country_vaccinations.csv" target="_blank">Kaggle</a></href>.</p>
+            <p>This visualisation is created by <a href="https://github.com/nathanwsoe" target="_blank">Nathan William Soegiarto</a></href>.<br>Data sources: <a href="https://github.com/owid/covid-19-data/tree/master/public/data/" target="_blank">Our World in Data</a></href>, <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Johns Hopkins University</a></href>, and <a href="https://www.kaggle.com/gpreda/covid-world-vaccination-progress?select=country_vaccinations.csv" target="_blank">Kaggle</a></href>.</p>
             </div>
         </div>
         <!-- end pure grid group -->
@@ -104,6 +104,11 @@
                 button.src = "media/play_button.png";
             }
         }
+
+        narration.onended = function() {
+            alert("The audio narration has ended");
+            button.src = "media/play_button.png";
+        };
     </script>
    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
