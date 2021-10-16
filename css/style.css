@@ -2,6 +2,9 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 48px;
     font-weight: 700;
+    margin: 5px;
+    margin-left: 0px;
+    margin-top: 10px;
 }
 h2 {
     font-family: 'Poppins', sans-serif;
@@ -9,6 +12,34 @@ h2 {
 }
 #small_text {
     font-size: 12px;
+}
+.pink_text {
+    color: #f9c0cb;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px black;
+}
+.white_text {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px black;
+}
+.cases_text {
+    font-weight: bold;
+    color: #2f5aa6;
+}
+.deaths_text {
+    font-weight: bold;
+    color: #e41a1c;
+}
+.vaccine_text {
+    font-weight: bold;
+    color: #90d0ba;
+    text-shadow: 1.5px 1.2px 0px black;
+}
+.vaccine_title {
+    font-weight: bold;
+    color: #90d0ba;
+    text-shadow: 2px 1.5px 0px black;
 }
 body {
     background-color: white;
@@ -30,32 +61,43 @@ body {
 }
 #banner {
     padding: 20px;
+    padding-top: 25px;
     background: url("../media/webpage_banner.jpg") #20445f;
     background-position: center;
     color: white;
 }
 #choro_frame {
     background-color: #eaf6ff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 20px;
+}
+#choro_frame p {
+    margin-right: 650px;
 }
 #choropleth_map {
     padding-right: 10px;
+}
+#scatter_frame {
+    background-color: #ddeefa;
+    padding: 20px;
+}
+#scatter_frame p {
+    margin-right: 300px;
 }
 #radial_frame {
     background-color: #a0c5e0;
     padding: 20px;
 }
+#radial_frame p {
+    margin-right: 290px;
+}
 #radial {
     width: 100%;
 }
 #bar_frame {
-    background-color: #b7d2e6;
+    background-color: #c6dded;
     margin-left: 30px;
-    padding-top: 35px;
-    padding-bottom: 30px;
+    padding: 20px;
+    padding-bottom: 47.5px;
 }
 #sankey_multiple {
     font-size: 12px;
@@ -63,12 +105,18 @@ body {
     padding-bottom: 15px;
 }
 #sankey_frame {
-    background-color: #c6dded;
+    background-color: #b1cde4;
     padding: 20px;
 }
+#sankey_frame p {
+    margin-right: 300px;
+}
 #line_frame {
-    background-color: #ddeefa;
+    background-color: #cfe0f2;
     padding: 20px;
+}
+#line_frame p {
+    margin-right: 340px;
 }
 #end_credit {
     background: url("../media/webpage_banner.jpg") #20445f;
@@ -78,30 +126,26 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.audio_frame {
-    background-color: #b0cbe0;
-}
 #audio{
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    padding: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     color: white;
 }
 #audio p{
-    margin-left: 15px;
+    margin-left: 12px;
 }
 #button {
-    margin-top: 5px;
-    width: 60px;
+    margin-top: 4px;
+    margin-left: -4px;
+    width: 40px;
     cursor: pointer;
 }
 #button:hover {
     margin-top: 5px;
-    width: 60px;
+    width: 40px;
     cursor: pointer;
     filter: opacity(0.6);
 }
@@ -166,4 +210,3 @@ a:active {
     color: #d37a98;
     background-color: transparent;
 }
-/* #f3e199*/
