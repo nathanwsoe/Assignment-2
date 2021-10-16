@@ -26,52 +26,95 @@
         <div class="pure-g" id="banner">
         <div class="pure-u-1-1">
             <h1>COVID-19, Visualized (2020-2021)</h1>
+            <div id="audio">
+                <img src="media/play_button.png", id="button">
+                <p><span style="color: #FC6600">Click the button</span> to listen to the audio narration</p>
+            </div>
         </div>
         </div>
         <!-- end pure grid group -->
 
         <!-- pure grid group -->
         <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="choro_frame">
+                    <div class="description-left">
+                        <h2>COVID-19 Cumulative <span class="cases_text">Cases</span> and <span class="deaths_text">Deaths</span> Around the World</h2>
+                        <p>The coronavirus has already spread to almost every country in the world. It has led to a substantial 
+                            loss of human life worldwide.</p>
+                        <p>The map gives a good overview on which countries are impacted the most by the virus. It can be seen 
+                            based on the number of <span class="cases_text">cases</span> as well as 
+                            <span class="deaths_text">deaths</span>, and each country is coloured based on different classes of <strong>severity</strong>.</p>
+                        <div id="small_text">
+                        <p>* <span class="pink_text">Pink</span> countries represent countries with no data</p>
+                        </div>
+                    </div>
+                    <div id="choropleth_map"></div>
+                    </div>
+            </div>
+            </div>
+            <!-- end pure grid group -->
+
+        <!-- pure grid group -->
+        <div class="pure-g">
             <div class="pure-u-2-3">
-            <div class="audio_frame">
-            <div id="audio">
-                <img src="media/play_button.png", id="button">
-                <p><span style="color: #FC6600">Click the button</span> to listen to the audio narration</p>
-            </div>
-            </div>
-            <div id="choro_frame">
-            <div class="description-left">
-                <h2>COVID-19 Cumulative Cases and Deaths Around the World</h2>
-                <p>The coronavirus has already spread to almost every country in the world. It has led to a substantial loss of human life worldwide, and presents an unprecedented challenge to public health, food supply and the world of work.</p>
-                <p>Using the visualization below we can see which countries are impacted the most by the virus. The map gives an overview on the matter and can be seen based on the number of cumulative cases as well as the number of cumulative deaths in each country.  Each country is coloured based on the different classes of severity.</p>
+            <div id="scatter_frame">
+                <h2>Correlation Between <span class="cases_text">Cases</span> and <span class="deaths_text">Deaths</span></h2>
+                <p>There seems to be a <strong>strong relationship</strong> between the number of <span class="cases_text">cases</span> and 
+                    the number of <span class="deaths_text">deaths</span>. Generally, the more COVID-19 <span class="cases_text">cases</span> 
+                    a country has, the more <span class="deaths_text">deaths</span> the country will suffer.</p>
                 <div id="small_text">
-                <p>* <strong><span style="color: #f9c0cb">Pink</span></strong> countries represent countries with no data</p>
+                    <p>* You can select the <strong>Continent</strong> to filter the chart</p>
                 </div>
-            </div>
-            <div id="choropleth_map"></div>
-                <p>This page demonstrates how you can use pure.css grid for your layout.</p>
-            <div id="scatter_plot"></div>
+                <div id="scatter_plot"></div>
             </div>
             <div id="line_frame">
-            <div id="line_chart"></div>
+                <h2>Daily Development of COVID-19</h2>
+                <p>From the charts, we can see that the trajectory of the <span class="vaccine_text">vaccination</span> rate 
+                    is far steeper than that of <span class="cases_text">cases</span> and <span class="deaths_text">deaths</span>.
+                     The number for daily <span class="cases_text">cases</span> and <span class="deaths_text">deaths</span> have also been <strong>declining</strong>, 
+                    one of the causes for that might be the recent <strong>increase</strong> in number of daily <span class="vaccine_text">vaccinations</span>.</p>
+                <div id="small_text">
+                    <p>* The data of the line charts can be modified by choosing another <strong>Country, Region, or Continent</strong> at the bottom</p>
+                </div>
+                <div id="line_chart"></div>
             </div>
             <div id="sankey_frame">
                 <div class="description-left">
-                    <h2>Vaccination Distribution by Vaccine Type</h2>
-                    <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+                    <h2><span class="vaccine_title">Vaccination</span> Distribution by <span class="vaccine_title">Vaccine</span> Type</h2>
+                    <p>The distribution of the visualization is skewed, this is due to a majority of countries using the 
+                        <strong>BioNTech/Pfizer</strong> <span class="vaccine_text">vaccine</span> as their main <span class="vaccine_text">vaccine</span>
+                        . That’s not surprising considering it is the first <span class="vaccine_text">vaccine</span> to be deployed and has an efficacy rate of <strong>95%</strong>.</p>
+                    <p>That being said, there are also countries that uses either the <strong>Moderna</strong> or <strong>Sinovac</strong> <span class="vaccine_text">vaccine</span> 
+                        as their <span class="vaccine_text">vaccine</span> of choice.</p>
+                    <div id="small_text">
+                        <p>* Hover over the <span class="pink_text">nodes/links</span> to <strong>highlight</strong> them</p>
+                    </div>
                 </div>
                 <div id="sankey_multiple"></div>
             </div>
             <div id="radial_frame">
                 <div class="description-left">
-                    <h2>Total Vaccinations by Manufacturer</h2>
-                    <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+                    <h2>Total <span class="vaccine_title">Vaccinations</span> by Manufacturer</h2>
+                    <p><strong>BioNTech/Pfizer</strong> are currently the leading COVID-19 manufacturers worldwide, they cover more than half of the 
+                        world’s <span class="vaccine_text">vaccine</span> demands. The <strong>BioNTech/Pfizer</strong> <span class="vaccine_text">vaccine</span> 
+                        has an efficacy rate of <strong>95%</strong>, comparatively, other <span class="vaccine_text">vaccines</span> made by different 
+                        manufacturers such as <strong>Moderna</strong>, and <strong>Oxford/AstraZeneca</strong> have efficacy rates of <strong>94.1%</strong>, and <strong>63.09%</strong> respectively. 
+                        The <strong>BioNTech/Pfizer</strong> <span class="vaccine_text">vaccine</span> is also currently the first and only 
+                        <span class="vaccine_text">vaccine</span> to be approved by the FDA.</p>
                 </div>
                 <div id="radial"></div>
             </div>
             </div>
             <div class="pure-u-1-3">
             <div id="bar_frame">
+                <h2>Percentage of <span class="vaccine_title">Fully Vaccinated</span> People</h2>
+                <p>In order to combat this disease, we need as many people to be <span class="vaccine_text">fully vaccinated</span>
+                    . People that have been <span class="vaccine_text">fully vaccinated</span> are less prone to get the virus. 
+                    Besides that, they are also less likely to get any serious symptoms if they did get COVID.</p>
+                <div id="small_text">
+                    <p>* You are able to select and drag on the <span class="white_text">white</span> bar chart on the right and use it as a filtering mechanism</p>
+                </div>
                 <div id="bar_chart"></div>
             </div>
             </div>
@@ -88,7 +131,7 @@
     </div> <!-- end page -->
 
     <audio id="narration">
-        <source src="media/run_it.mp3" type="audio/mp3">
+        <source src="media/narration.mp3" type="audio/mp3">
     </audio>
 
     <script>
