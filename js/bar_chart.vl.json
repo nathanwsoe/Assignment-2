@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/people_fully_vaccinated_cleaned.csv"
     },
   "hconcat": [{
-    "height": 3000,
+    "height": 3420,
     "width": 80,
     "params": [
     {
@@ -26,7 +26,7 @@
         "type": "quantitative",
         "legend": null,
         "scale": {
-          "range": ["#cae9b4", "#90d0ba", "#5ab4c2", "#3d8bbc", "#2f5aa6"]
+          "range": ["#2f5aa6", "#3d8bbc", "#5ab4c2", "#90d0ba", "#cae9b4"]
         }
       },
       "y": {
@@ -106,6 +106,6 @@
           "stroke": "transparent"
         }
       },
-      "background": "#b7d2e6"
+      "background": "#c6dded"
     }
   }
