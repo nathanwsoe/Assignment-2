@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 500,
+  "width": 1100,
+  "height": 600,
   "params": [
     {
       "name": "attribute_selection",
@@ -104,7 +104,7 @@
           "type": "quantitative",
           "scale": {
             "type": "quantile",
-            "range": [1, 1, 1, 1]
+            "range": [1.5, 1.5, 1.5, 1.5]
           }
         },
         "strokeOpacity": {
