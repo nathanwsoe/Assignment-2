@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 580,
   "height": 500,
-  "title": "Correlation Between Cases and Deaths",
   "data": {
     "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/cases_and_deaths_updated.csv"
   },
@@ -184,6 +183,6 @@
     }
   ],
     "config": {
-        "background": "#eaf6ff"
+        "background": "#ddeefa"
       }
 }
