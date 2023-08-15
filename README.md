@@ -1,3 +1,2 @@
 # covid19-data-visualization
-
-This website is the result of my efforts in doing the 2nd Assignment of FIT3179, I took this subject in my 2nd year of Monash University.
+This website beautifully represents the outcome of my diligent efforts and creative exploration during the completion of the 2nd Assignment for FIT3179: Data Visualizations in the context of my 3rd semester at Monash University. It serves as a testament to my engagement with the subject matter and my commitment to producing a meaningful and visually compelling showcase of my skills and understanding. As a culmination of both academic learning and personal dedication, this platform offers visitors an immersive glimpse into the depth and breadth of my journey in the realm of data visualizations.
